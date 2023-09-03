@@ -1,7 +1,7 @@
 # Power-Allocation-in-NOMA-using-Machine-Learning
 
 
-#Introduction
+##INTRODUCTION
 
 The major purpose of our project is the allocation of power to the users from
 multiple base stations relying on the position of the user from the nearby base station
@@ -17,7 +17,7 @@ predictive power outage. Outage probability of predictive model was lesser which
 means user fairness was achieved.
 
 
-#Problem statement 
+##PROBLEM STATEMENT
 
 Providing Power Allocation in NOMA Using Machine Learning techniques to Achieve
 User Fairness. We are using Machine learning to decrease overhead caused due to
@@ -25,7 +25,7 @@ CSI collection of a massive number of users. For this project, we are considerin
 users and one base station for tractability. Later on, this model can be generalized
 for more number of base stations and/or users.
 
-#Methodology 
+##METHODOLOGY
 
 The main topics of this work were NOMA, interference suppression, silicon carbide,
 NOMA simulation, NOMA detector, signal coding, two-segment signal shift keying, and DPC. Nonorthogonal multiple access (NOMA) systems that offer extended
@@ -45,13 +45,13 @@ meets the channel gain requirement.
 
 For finding the outage probability of fixed power user, we used terminologies which
 are given below
-• Transmitted SNR
-• Received SNR for cell-center user (CCU) and cell-edge user (CEU)
-• Fading
-• Total Channel gain
-• Outage of CCU and CEU
+• Transmitted SNR <br>
+• Received SNR for cell-center user (CCU) and cell-edge user (CEU) <br>
+• Fading <br>
+• Total Channel gain <br>
+• Outage of CCU and CEU <br>
 
-* Collecting Data
+### Collecting Data
   For this work, we created a synthetic data set in which we assumed there is one
 user, one base station, and a different scenario of it. The data set contains around
 109 observations with 6 different attributes. A single word (row) corresponds to one
@@ -63,29 +63,30 @@ In this dataset, there is one attribute which is coverage. If the user is within
 coverage of the base station, then the value of coverage is one, otherwise, it will be
 zero. Target data is power. So, we will predict power for new data.
 
-* NOMA Techniques
+###NOMA Techniques
   In this NOMA concept, we are going to distribute power to the user which is connected to the base station. In between some users and base stations, there are some
 obstacles are there. That’s why it may affect network connectivity.
 First, we are going to find fading and total fading for each user
-                         #Fading = random exponential value
-                         #Total fading = Fading * (distance)−3
+
+                         Fading = random exponential value
+                         Total fading = Fading * (distance)−3
 
 Where distance = distance between the base station and user And 3 = path lost
 variable. Now we got the total fading to each user.
 We will find outage probability for cell center user and cell edge user.
                       
-                        #Transmit SNR = power / noise = rho
-                        #cell-center SNR = rho*power*channel gain of cell center user
-                        #cell-edge SNR = rho*power*channel gain of cell edge user/ 1 + (rho*power*channel gain of CEU)
+                        Transmit SNR = power / noise = rho
+                        cell-center SNR = rho*power*channel gain of cell center user
+                        cell-edge SNR = rho*power*channel gain of cell edge user/ 1 + (rho*power*channel gain of CEU)
 After finding SNR now we are going to check outage is occurring or not.
 
-#If ( log(1+SNR) is less than 0.1 ) then outage occurred
-#If ( log(1+SNR) is greater than 0.1 ) then outage not occurred
-Where 0.1 bits/sec = target rate.
+                        If ( log(1+SNR) is less than 0.1 ) then outage occurred
+                        If ( log(1+SNR) is greater than 0.1 ) then outage not occurred
+                                                                Where 0.1 bits/sec = target rate.
 
-#Outage probability = no.of outage occurred / total number of iterations
+                        Outage probability = no.of outage occurred / total number of iterations
 
-* Machine Learning
+###Machine Learning
   So basically, in this scenario we have defined user is strong or weak now, it’s time
 to use some machine learning algorithm to allocate the required power to each user
 The model should allocate low power to the strong user and high power to the
